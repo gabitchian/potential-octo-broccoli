@@ -1,0 +1,10 @@
+.idea/
+project/target/
+target/
+filebeat.config
+Dockerrun.aws.json
+configurations.config
+telegraf.config
+.bloop/
+.metals/
+project/.bloop
