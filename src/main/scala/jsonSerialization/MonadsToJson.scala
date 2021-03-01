@@ -20,5 +20,4 @@ object MonadsToJson {
         case None => StringToJson("null")
       }
   }
-
 }
