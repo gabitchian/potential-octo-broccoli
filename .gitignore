@@ -8,3 +8,4 @@ telegraf.config
 .bloop/
 .metals/
 project/.bloop
+.bsp/
