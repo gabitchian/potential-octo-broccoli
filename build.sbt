@@ -14,9 +14,8 @@ libraryDependencies ++= Seq(
   "io.circe"                 %% "circe-generic-extras"     % "0.13.0",
   "io.circe"                 %% "circe-parser"             % "0.13.0",
   "io.circe"                 %% "circe-optics"             % "0.13.0",
-  "com.softwaremill.macwire" %% "macros"                   % "2.3.7",
-  "com.softwaremill.macwire" %% "util"                     % "2.3.7",
-  "org.scalatest"            %% "scalatest"                % "3.2.5" % Test,
-  "com.typesafe.akka"        %% "akka-http-testkit"        % "10.2.4" % Test,
-  "com.typesafe.akka"        %% "akka-stream-testkit"      % "2.6.9" % Test
+  "org.scalatest"            %% "scalatest"                % "3.2.5"   % Test,
+  "org.scalatestplus"        %% "mockito-3-4"              % "3.2.5.0" % Test,
+  "com.typesafe.akka"        %% "akka-http-testkit"        % "10.2.4"  % Test,
+  "com.typesafe.akka"        %% "akka-stream-testkit"      % "2.6.9"   % Test
 )
