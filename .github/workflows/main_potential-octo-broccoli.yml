@@ -21,8 +21,8 @@ jobs:
       with:
         java-version: '11'
 
-    - name: Build with Maven
-      run: sbt compile
+    - name: Build with SBT
+      run: sbt compile run
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
