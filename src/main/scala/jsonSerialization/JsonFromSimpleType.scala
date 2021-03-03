@@ -1,5 +1,5 @@
 package jsonSerialization
 
-trait JsonConverter[T] {
+trait JsonFromSimpleType[T] {
   def converter(value: T): JsonValue
 }
