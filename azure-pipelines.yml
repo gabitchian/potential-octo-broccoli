@@ -16,5 +16,9 @@ steps:
   displayName: 'Running $ sbt update'
 - script: sbt compile
   displayName: 'Running $ sbt compile'
-- script: sbt test
-  displayName: 'Running $ sbt test'
+- task: AzureWebApp@1
+  inputs:
+    appType: 'webAppLinux'
+    appName: 'potential-octo-broccoli'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    startUpCommand: 'sbt run'
