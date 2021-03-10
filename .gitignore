@@ -9,3 +9,5 @@ telegraf.config
 .metals/
 project/.bloop
 .bsp/
+.ivy2/
+.sbt/

@@ -8,5 +8,5 @@ object Application extends HttpApp with App {
 
   override protected def routes: Route = endpoints.routes
 
-  startServer("localhost", 5000)
+  startServer("0.0.0.0", 5000)
 }
