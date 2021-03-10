@@ -1,6 +1,6 @@
 package models
 
-class QuizBean(background: String, description: String, icon: String, theme: Theme, title: String) {
+class QuizClass(background: String, description: String, icon: String, theme: Theme, title: String) {
 
   def this() = this("", "", "", null, "")
 

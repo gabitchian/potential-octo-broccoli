@@ -1,6 +1,6 @@
 package models
 
-class ThemeBean(borderRadius: String, colors: Colors) {
+class ThemeClass(borderRadius: String, colors: Colors) {
 
   def this() = this("", null)
 
