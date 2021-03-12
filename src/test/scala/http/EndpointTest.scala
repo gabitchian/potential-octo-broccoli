@@ -1,16 +1,19 @@
 package http
 
+import akka.actor.testkit.typed.scaladsl.ActorTestKit
+import akka.actor.typed.ActorSystem
 import akka.http.scaladsl.server.Route
 import akka.http.scaladsl.testkit.ScalatestRouteTest
-import org.scalatest.BeforeAndAfter
+import org.scalatest.concurrent.ScalaFutures
 import org.scalatest.featurespec.AnyFeatureSpec
+import org.scalatest.matchers.should.Matchers
 
-import scala.language.postfixOps
+class EndpointTest extends AnyFeatureSpec with Matchers with ScalaFutures with ScalatestRouteTest {
 
-class EndpointTest extends AnyFeatureSpec with BeforeAndAfter with ScalatestRouteTest {
-  lazy val endpoints: Endpoint = new Endpoint()
+  lazy val testKit: ActorTestKit = ActorTestKit()
+  implicit def typedSystem: ActorSystem[Nothing] = testKit.system
 
-  protected def routes: Route = endpoints.routes
+  lazy val routes: Route = new Endpoint().routes
 
   Feature("Hello world endpoint") {
     Scenario("get") {

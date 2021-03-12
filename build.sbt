@@ -23,19 +23,27 @@ docker / dockerfile := {
 
 test in assembly := {}
 
+val akkaHttpVersion = "10.2.4"
+val akkaVersion = "2.6.13"
+
 libraryDependencies ++= Seq(
   "org.scala-lang.modules" %% "scala-parser-combinators" % "1.1.2",
-  "com.typesafe.akka"      %% "akka-actor"               % "2.6.13",
-  "com.typesafe.akka"      %% "akka-stream"              % "2.6.13",
-  "com.typesafe.akka"      %% "akka-http"                % "10.2.4",
+  "com.typesafe.akka"      %% "akka-actor"               % akkaVersion,
+  "com.typesafe.akka"      %% "akka-stream"              % akkaVersion,
+  "com.typesafe.akka"      %% "akka-http"                % akkaHttpVersion,
+  "com.typesafe.akka"      %% "akka-http-spray-json"     % akkaHttpVersion,
+  "com.typesafe.akka"      %% "akka-actor-typed"         % akkaVersion,
   "io.circe"               %% "circe-core"               % "0.13.0",
   "io.circe"               %% "circe-generic"            % "0.13.0",
   "io.circe"               %% "circe-generic-extras"     % "0.13.0",
   "io.circe"               %% "circe-parser"             % "0.13.0",
   "io.circe"               %% "circe-optics"             % "0.13.0",
   "org.scalactic"          %% "scalactic"                % "3.2.5",
-  "org.scalatest"          %% "scalatest"                % "3.2.5" % Test,
-  "org.scalatestplus"      %% "mockito-3-4"              % "3.2.5.0" % Test,
-  "com.typesafe.akka"      %% "akka-http-testkit"        % "10.2.4" % Test,
-  "com.typesafe.akka"      %% "akka-stream-testkit"      % "2.6.13" % Test
+  "org.scalatest"          %% "scalatest"                % "3.2.5"          % Test,
+  "org.scalatestplus"      %% "mockito-3-4"              % "3.2.5.0"        % Test,
+  "com.typesafe.akka"      %% "akka-http-testkit"        % "10.2.4"         % Test,
+  "com.typesafe.akka"      %% "akka-stream-testkit"      % "2.6.13"         % Test,
+  "com.typesafe.akka"      %% "akka-http-testkit"        % akkaHttpVersion  % Test,
+  "com.typesafe.akka"      %% "akka-actor-testkit-typed" % akkaVersion      % Test,
+  "ch.qos.logback"         % "logback-classic"           % "1.2.3",
 )
